@@ -74,7 +74,47 @@ The refactoring itself is documented by the git log.
 Changes to the test suite are shown and documented, e.g. as a patch
 
 ## Effort spent
-For each team member, how much time was spent in
+Alexander Manske
+1.  plenary discussions/meetings;
+2.  discussions within parts of the group;
+3.  reading documentation;
+4.  configuration;
+5.  analyzing code/output;
+6.  writing documentation;
+7.  writing code;
+8.  running code?
+
+Alexander Viklund
+1.  plenary discussions/meetings;
+2.  discussions within parts of the group;
+3.  reading documentation;
+4.  configuration;
+5.  analyzing code/output;
+6.  writing documentation;
+7.  writing code;
+8.  running code?
+
+Alfrida Mattisson
+1.  plenary discussions/meetings;
+2.  discussions within parts of the group;
+3.  reading documentation;
+4.  configuration;
+5.  analyzing code/output;
+6.  writing documentation;
+7.  writing code;
+8.  running code?
+
+Hanna Nyblom
+1.  plenary discussions/meetings;
+2.  discussions within parts of the group;
+3.  reading documentation;
+4.  configuration;
+5.  analyzing code/output;
+6.  writing documentation;
+7.  writing code;
+8.  running code?
+
+Lukas Szerszen
 1.  plenary discussions/meetings;
 2.  discussions within parts of the group;
 3.  reading documentation;
