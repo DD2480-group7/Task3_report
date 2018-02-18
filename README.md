@@ -9,7 +9,7 @@ has to be delivered in a standard, cross-platform format.
 * Basically Slack but open source and with a email threading model. (Also LaTeX inline-support :heart:!)
 
 
-## Architectural overview (optional, as one item for P+)
+## Architectural overview
 ![Components](architecture_simple.png)
 ## Selected issue(s)
 * Title: Clean up email_mirror code
