@@ -20,7 +20,18 @@ TODO
 Zulip is a very well documented project with a great community with helpful people.
 
 To help with onboarding they have a ["Contributing to Zulip, getting started"-guide](https://zulip.readthedocs.io/en/latest/overview/contributing.html). The documentation contains everything from how to set up a development environment to how to run tests, what tests correspond to what parts of the code, code standards and extensive documentation for the different parts of the code. The prerequisite tools for the project were Git, Git for Windows (for windows users) Vagrant, Virtualbox, vagrant-lxc plugin (for linux users). The tools were well documented in the getting started-guide. Unfortunately there were errors depending on what operating system the contributor was using that the documentation had no answers to. When running “vagrant up” Vagrant downloaded the base Ubuntu 14.04 virtual machine image (for macOS and Windows) or container (for Ubuntu), configured this virtual machine/container for use with Zulip, created a shared directory mapping the clone of the Zulip code inside the virtual machine/container at ~/zulip and ran the tools/provision script inside the virtual machine/container, which downloads all required dependencies, sets up the python environment for the Zulip development server, and initializes a default test database. A [log](provision.log) from provisioning is included in this repository.
-### Zulip third party services (mentioned in subsystems documentation): 
+
+The onboarding experience as a windows user for the zulip-project was complicated and time-demanding since the current setup for windows is flawed and the documentation offered no support for the issue.
+Two team members using windows had the issue of the Vagrantfile on line 35 checking the version of lxc-ls. Our guess is that the Vagrantfile isn’t supposed to be run for windows users.
+To find the solution the “Troubleshooting and Common Errors” and “#provision help”-channel in zulip was studied, Git-BASH and Python was re-installed, the repo was re-cloned and windows permission-errors was examined.
+Docker was also used to try to replace Vagrant but Docker required Windows Pro while the user had Windows Home.
+The issue was finally resolved by one user commenting out line 35 and hard-coding the variable LXC_VERSION to 2.1.0. We have no confirmation of whether the zulip-team accepts this solution.    
+
+For communications Zulip uses their own platform where they have a community server set up and where there always is someone that's able to help if you're stuck or having problems.
+
+All in all this gives a very good base for great onboarding. It also sets a high standard
+
+### Third party services (mentioned in subsystems documentation): 
 * PostgreSQL
   * Database for persistent data
 * Redis
@@ -41,23 +52,7 @@ To help with onboarding they have a ["Contributing to Zulip, getting started"-gu
   * Used to cache database model objects
 * Nagios
   * Used for notifications to the system
-
-
-For communications Zulip uses their own platform where they have a community server set up and where there always is someone that's able to help if you're stuck or having problems.
-
-All in all this gives a very good base for great onboarding. It also sets a high standard
-
-1.  Did it build as documented?
-(See the assignment for details; if everything works out of the box,
-there is no need to write much here.)
-
-The onboarding experience as a windows user for the zulip-project was complicated and time-demanding since the current setup for windows is flawed and the documentation offered no support for the issue.
-Two team members using windows had the issue of the Vagrantfile on line 35 checking the version of lxc-ls. Our guess is that the Vagrantfile isn’t supposed to be run for windows users.
-To find the solution the “Troubleshooting and Common Errors” and “#provision help”-channel in zulip was studied, Git-BASH and Python was re-installed, the repo was re-cloned and windows permission-errors was examined.
-Docker was also used to try to replace Vagrant but Docker required Windows Pro while the user had Windows Home.
-The issue was finally resolved by one user commenting out line 35 and hard-coding the variable LXC_VERSION to 2.1.0. We have no confirmation of whether the zulip-team accepts this solution.    
-
-
+  
 ## Requirements affected by functionality being refactored
 
 ### Req3:
