@@ -77,6 +77,7 @@ The refactoring itself is documented by the git log.
 *Changes to the test suite are shown and documented, e.g. as a patch*
 
 ## Effort spent
+
 *Alexander Manske*
 1.  plenary discussions/meetings;
 2.  discussions within parts of the group;
