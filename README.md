@@ -10,7 +10,7 @@ has to be delivered in a standard, cross-platform format.
 
 
 ## Architectural overview (optional, as one item for P+)
-TODO
+![Components](architecture_simple.png)
 ## Selected issue(s)
 * Title: Clean up email_mirror code
 * URL:https://github.com/zulip/zulip/issues/1836
