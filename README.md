@@ -19,7 +19,29 @@ TODO
 ## Onboarding experience
 Zulip is a very well documented project with a great community with helpful people.
 
-To help with onboarding they have a ["Contributing to Zulip, getting started"-guide](https://zulip.readthedocs.io/en/latest/overview/contributing.html). The documentation contains everything from how to set up a development environment to how to run tests, what tests correspond to what parts of the code, code standards and extensive documentation for the different parts of the code.
+To help with onboarding they have a ["Contributing to Zulip, getting started"-guide](https://zulip.readthedocs.io/en/latest/overview/contributing.html). The documentation contains everything from how to set up a development environment to how to run tests, what tests correspond to what parts of the code, code standards and extensive documentation for the different parts of the code. The prerequisite tools for the project were Git, Git for Windows (for windows users) Vagrant, Virtualbox, vagrant-lxc plugin (for linux users). The tools were well documented in the getting started-guide. Unfortunately there were errors depending on what operating system the contributor was using that the documentation had no answers to. When running “vagrant up” Vagrant downloaded the base Ubuntu 14.04 virtual machine image (for macOS and Windows) or container (for Ubuntu), configured this virtual machine/container for use with Zulip, created a shared directory mapping the clone of the Zulip code inside the virtual machine/container at ~/zulip and ran the tools/provision script inside the virtual machine/container, which downloads all required dependencies, sets up the python environment for the Zulip development server, and initializes a default test database. A log from provisioning is included in this repository.
+### Third party services of zulip mentioned in their subsystems documentation: 
+* PostgreSQL
+  * Database for persistent data
+* Redis
+  * Used for short-term data stores
+* Nginx
+  * Front end web-server 
+* RabbitMQ
+  * Queuing system.
+* Django & Tornado
+  * Django: main web application server
+  * Tornado: runs server to client real time push system
+* HTML templates
+  * Jinja 2: backend templates
+  * Handlebars: frontend templates
+* Supervisor
+  * Starts and restarts server processes automatically if they crash.
+* Memcached
+  * Used to cache database model objects
+* Nagios
+  * Used for notifications to the system
+
 
 For communications Zulip uses their own platform where they have a community server set up and where there always is someone that's able to help if you're stuck or having problems.
 
