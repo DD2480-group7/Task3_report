@@ -51,10 +51,13 @@ All in all this gives a very good base for great onboarding. It also sets a high
   * Used for notifications to the system
   
 ## Requirements affected by functionality being refactored
+Name(ID)
+Title 
+Description
 
 ### Req3:
-Requirements related to the functionality tageted by the refactoring:
-(identified (by name(ID), title and description, and other optional attributes) and described in a systematic way)
+*Requirements related to the functionality tageted by the refactoring:
+(identified (by name(ID), title and description, and other optional attributes) and described in a systematic way)*
 
 ## Existing test cases relating to refactored code
 
@@ -62,8 +65,8 @@ Requirements related to the functionality tageted by the refactoring:
 (Link to) a UML diagram and its description
 
 ### Req7:
-Key features affected by the refactoring are shown in UML class diagrams (before/after).
-Note: you do not have to show classes, fields, or methods that are not changed, unless they help with the overall understanding.
+*Key features affected by the refactoring are shown in UML class diagrams (before/after).
+Note: you do not have to show classes, fields, or methods that are not changed, unless they help with the overall understanding.*
 
 ## Test logs
 Overall results with link to a copy of the logs (before/after
@@ -71,7 +74,7 @@ refactoring).
 The refactoring itself is documented by the git log.
 
 ### Req5:
-Changes to the test suite are shown and documented, e.g. as a patch
+*Changes to the test suite are shown and documented, e.g. as a patch*
 
 ## Effort spent
 *Alexander Manske*
@@ -133,8 +136,7 @@ Even if the given documentation/examples of the project were quite extensive, so
 The community of the project seems to be fairly active, with contributers posting not only on the github issues but also daily in zulip channels like "#provision help". Our team even got the opportunity to post about our onboarding issues in this channel and potentially help future contributors.
 
 ### Req8:
-The overall work carried out, and experience gained, are documented. In particular, mention your experience about
-
+*The overall work carried out, and experience gained, are documented. In particular, mention your experience about
 the given documentation/examples of the project,
 its tool framework,
-and the interaction within your team and with the community of the project.
+and the interaction within your team and with the community of the project.*
