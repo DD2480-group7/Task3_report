@@ -1,0 +1,54 @@
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_confirm_email_change
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_confirm_email_change_when_time_exceeded
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_confirm_email_change_with_invalid_key
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_confirm_email_change_with_non_existent_key
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_email_change_already_taken
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_end_to_end_flow
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_post_invalid_email
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_post_same_email
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_start_email_change_process
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_unauthorized_email_change
+Running zerver.tests.test_email_change.EmailChangeTestCase.test_unauthorized_email_change_from_email_confirmation_link
+Running zerver.tests.test_email_log.EmailLogTest.test_clear_email_logs
+Running zerver.tests.test_email_log.EmailLogTest.test_forward_address_details
+Running zerver.tests.test_email_log.EmailLogTest.test_generate_emails
+Running zerver.tests.test_email_log.EmailLogTest.test_get_email_log_page
+Running zerver.tests.test_email_mirror.TestDigestEmailMessages.test_active_users_not_enqueued
+Running zerver.tests.test_email_mirror.TestDigestEmailMessages.test_inactive_users_queued_for_digest
+Running zerver.tests.test_email_mirror.TestDigestEmailMessages.test_new_stream_link
+/srv/zulip-py3-venv/lib/python3.4/site-packages/django/db/models/fields/__init__.py:1451: RuntimeWarning: DateTimeField Stream.date_created received a naive datetime (2017-11-01 00:00:00) while time zone support is active.
+  RuntimeWarning)
+Running zerver.tests.test_email_mirror.TestDigestEmailMessages.test_no_email_digest_for_bots
+Running zerver.tests.test_email_mirror.TestDigestEmailMessages.test_only_enqueue_on_valid_day
+Running zerver.tests.test_email_mirror.TestDigestEmailMessages.test_receive_digest_email_messages
+Running zerver.tests.test_email_mirror.TestEmailMirrorLibrary.test_get_missed_message_token
+Running zerver.tests.test_email_mirror.TestEmailMirrorTornadoView.test_error_to_stream_with_wrong_address
+Running zerver.tests.test_email_mirror.TestEmailMirrorTornadoView.test_success_stream
+Running zerver.tests.test_email_mirror.TestEmailMirrorTornadoView.test_success_to_private
+Running zerver.tests.test_email_mirror.TestEmailMirrorTornadoView.test_using_mm_address_twice
+Running zerver.tests.test_email_mirror.TestEmailMirrorTornadoView.test_wrong_missed_email_private_message
+Running zerver.tests.test_email_mirror.TestEmptyGatewaySetting.test_encode_email_addr
+Running zerver.tests.test_email_mirror.TestEmptyGatewaySetting.test_missed_message
+2018-02-19 03:26:27.001 WARN [zerver.lib.email_mirror] EMAIL_GATEWAY_PATTERN is an empty string, using NOREPLY_EMAIL_ADDRESS in the 'from' field.
+Running zerver.tests.test_email_mirror.TestMissedHuddleMessageEmailMessages.test_receive_missed_huddle_message_email_messages
+2018-02-19 03:26:27.210 INFO [zerver.lib.email_mirror] Successfully processed email from cordelia@zulip.com to cordelia@zulip.com, iago@zulip.com, othello@zulip.com
+Running zerver.tests.test_email_mirror.TestMissedPersonalMessageEmailMessages.test_receive_missed_personal_message_email_messages
+2018-02-19 03:26:27.471 INFO [zerver.lib.email_mirror] Successfully processed email from othello@zulip.com to hamlet@zulip.com
+Running zerver.tests.test_email_mirror.TestReplyExtraction.test_reply_is_extracted_from_html
+2018-02-19 03:26:27.756 INFO [zerver.lib.email_mirror] Successfully processed email to Denmark (zulip)
+Running zerver.tests.test_email_mirror.TestReplyExtraction.test_reply_is_extracted_from_plain
+2018-02-19 03:26:27.862 INFO [zerver.lib.email_mirror] Successfully processed email to Denmark (zulip)
+Running zerver.tests.test_email_mirror.TestScriptMTA.test_error_no_recipient
+Running zerver.tests.test_email_mirror.TestScriptMTA.test_success
+Running zerver.tests.test_email_mirror.TestStreamEmailMessagesEmptyBody.test_receive_stream_email_messages_empty_body
+Running zerver.tests.test_email_mirror.TestStreamEmailMessagesSuccess.test_receive_stream_email_messages_success
+2018-02-19 03:26:28.390 INFO [zerver.lib.email_mirror] Successfully processed email to Denmark (zulip)
+
+----------------------------------------------------------------------
+Ran 37 tests in 4.130s
+
+OK
+-- Running tests in serial mode.
+Destroying test database for alias 'default'...
+Using existing clone for alias 'default'...
+Destroying test database for alias 'default'...
