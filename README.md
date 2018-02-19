@@ -62,11 +62,14 @@ Description
 ## Existing test cases relating to refactored code
 
 ## The refactoring carried out
-(Link to) a UML diagram and its description
+The following is a simplified UML-diagram over the classes and methods before and after they were affected by our refactoring. 
 
-### Req7:
-*Key features affected by the refactoring are shown in UML class diagrams (before/after).
-Note: you do not have to show classes, fields, or methods that are not changed, unless they help with the overall understanding.*
+Since the affected classes are very large, fields and other unnessecary data has been omitted to give a clearer overview over what's been changed and how it affects each method. 
+
+An asterix (*) after the method name implies that the specific method is called from a test case. 
+
+
+![Components](zulip_diagram.png)
 
 ## Test logs
 Overall results with link to a copy of the logs (before/after
