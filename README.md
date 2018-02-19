@@ -95,14 +95,14 @@ The refactoring itself is documented by the git log.
 ## Effort spent
 
 *Alexander Manske*
-1.  plenary discussions/meetings;
-2.  discussions within parts of the group;
-3.  reading documentation;
-4.  configuration;
-5.  analyzing code/output;
-6.  writing documentation;
-7.  writing code;
-8.  running code?
+1.  plenary discussions/meetings ≈ 2
+2.  discussions within parts of the group ≈ 3
+3.  reading documentation ≈ 8
+4.  configuration ≈ 3
+5.  analyzing code/output ≈ 3
+6.  writing documentation ≈ 3
+7.  writing code ≈ 2
+8.  running code ≈ 6
 
 *Alexander Viklund*
 1.  plenary discussions/meetings;
