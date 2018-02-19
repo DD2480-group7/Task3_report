@@ -53,16 +53,16 @@ All in all this gives a very good base for great onboarding. It also sets a high
   * Used for notifications to the system
   
 ## Requirements affected by functionality being refactored
-####1 - Location of methods get_email_gateway_message_string_from_address, encode_email_address_helper, decode_email_address
+#### 1 - Location of methods get_email_gateway_message_string_from_address, encode_email_address_helper, decode_email_address
 These three methods should be moved from zerver/lib/actions.py to zerver/lib/email_mirror.py.
 
-####2 - Dependencies are correct
+#### 2 - Dependencies are correct
 After moving the three methods (see Requirement 1) we have to make sure dependencies are correct; that is, import statements have been changed according to the relocation and calling methods work as before. All tests should pass for the project.
 
-####3 - get_email_gateway_message_string_from_address should throw ZulipEmailUnrecognizedAddressError
+#### 3 - get_email_gateway_message_string_from_address should throw ZulipEmailUnrecognizedAddressError
 Earlier get_email_gateway_message_string_from_address returned None if the email address submitted did not match the specified regex pattern. Now the method get_email_gateway_message_string_from_address should raise an exception instead. All calling methods should handle this so that the overall functionality of the code remains the same and all tests should pass for the project.
 
-####4 - Add tests to test functionality of exception-throwing in get_email_gateway_message_string_from_address
+#### 4 - Add tests to test functionality of exception-throwing in get_email_gateway_message_string_from_address
 We have to make sure that an exception is thrown when no match is found for submitted email address, and that the method terminates as it should when a match is found. To fulfill this we need at least two tests: one positive and one negative. All tests (including our new ones) should pass.
 
 ### Req3:
