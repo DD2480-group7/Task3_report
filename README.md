@@ -65,10 +65,6 @@ Earlier get_email_gateway_message_string_from_address returned None if the email
 #### 4 - Add tests to test functionality of exception-throwing in get_email_gateway_message_string_from_address
 We have to make sure that an exception is thrown when no match is found for submitted email address, and that the method terminates as it should when a match is found. To fulfill this we need at least two tests: one positive and one negative. All tests (including our new ones) should pass.
 
-### Req3:
-*Requirements related to the functionality tageted by the refactoring:
-(identified (by name(ID), title and description, and other optional attributes) and described in a systematic way)*
-
 ## Existing test cases relating to refactored code
 When it comes to this refactoring problem it was important that all tests that existed when we started working on the code would still pass after our changes had been made. This meant that we had to make sure all dependencies were correct and that calling methods could handle the exception being raised. If we succeeded in this all existing test cases should pass just as before.
 
@@ -125,14 +121,14 @@ The refactoring itself is documented by the git log.
 8.  running code ≈ 1
 
 *Hanna Nyblom*
-1.  plenary discussions/meetings;
-2.  discussions within parts of the group;
-3.  reading documentation;
-4.  configuration;
-5.  analyzing code/output;
-6.  writing documentation;
-7.  writing code;
-8.  running code?
+1.  plenary discussions/meetings ≈ 2
+2.  discussions within parts of the group ≈ 3
+3.  reading documentation ≈ 3
+4.  configuration ≈ 6
+5.  analyzing code/output ≈ 5
+6.  writing documentation ≈ 4
+7.  writing code ≈ 3
+8.  running code ≈ 3
 
 *Lukas Szerszen*
 1.  plenary discussions/meetings;
