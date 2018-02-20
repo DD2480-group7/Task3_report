@@ -36,13 +36,14 @@ The user can manipulate the view to create a narrow, focused view. E.g. the view
 According to Zulip their philosophy is to: "provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant"[1].
 
 ### Third party services (mentioned in subsystems documentation): 
+This section is a summary of [https://zulip.readthedocs.io/en/latest/overview/architecture-overview.html#html-templates-javascript-etc](https://zulip.readthedocs.io/en/latest/overview/architecture-overview.html#html-templates-javascript-etc).
 
-A lot of third party applications are implemented in zulip to make everything run smoothly and increase functionality. These third party programs and services are also technically a part of the whole application architecture, but we have chosen to focus less on them:
+Zulip is implemented with several third party applications. These third party programs and services are also technically a part of the whole application architecture, but we have chosen to focus less on them:
 
 * PostgreSQL
   * Database used for persistent data, aka. data that has a longer life time than the current session. 
 * Redis
-  * Used for short-term data storage. 
+  * In memory data storage, used for short-term storage. 
 * Nginx
   * Front end web-server, provides Django and Tornado with assets to handle. 
 * RabbitMQ
