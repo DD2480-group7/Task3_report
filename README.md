@@ -157,14 +157,14 @@ The refactoring itself is documented by the git log.
 8.  running code ≈ 6
 
 *Alexander Viklund*
-1.  plenary discussions/meetings;
-2.  discussions within parts of the group;
-3.  reading documentation;
-4.  configuration;
-5.  analyzing code/output;
-6.  writing documentation;
-7.  writing code;
-8.  running code?
+1.  plenary discussions/meetings incl. finding projects ≈ 2
+2.  discussions within parts of the group  ≈ 2
+3.  onboarding ≈ 4
+4.  Setting up environment ≈ 5
+5.  resolving dependency problems ≈ 4
+6.  writing report  ≈ 4
+7.  writing code ≈ 10
+8.  running code ≈ 3
 
 *Alfrida Mattisson*
 1.  plenary discussions/meetings ≈ 2
