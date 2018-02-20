@@ -9,12 +9,18 @@ Repo with our code: https://github.com/DD2480-group7/zulip
 
 
 ## Architectural overview
+### Key features
+Zulip (https://github.com/zulip/zulip) is a web-based chat application. Zulip is built with the Django Python web framework and, thus, includes server-side code, web client and Python API bindings. There is also a version called Zulip Mobile, which supports both IOS and Android. This is written in Javascript and React Naive. Zulip Desktop works on macOS, Linux and Windows.[1]
+
+Zulip has a lot of integrations such as Trello, AWS beanstalk, Jenkins, CircleCI, bitbucket etc. There is also great bot support and an API.
+
+### Key python structure
+
 ![Components](achitectural_overview.jpeg)
 
-### Key codebases
-Zulip (https://github.com/zulip/zulip) is a web-based chat application. Zulip is based on the Django Python web framework and, thus, includes server-side code, web client and Python API bindings. There is also a version called Zulip Mobile, which supports both IOS and Android. This is written in Javascript and React Naive. Zulip Desktop works on macOS, Linux and Windows.[1]
+The image above shows the relations between the key components in the python/django part of the project. The files and apps shown in the diagram are the ones that [the project considers the most important ones](https://zulip.readthedocs.io/en/latest/overview/directory-structure.html#core-python-files)
 
-Zulip also maintains: "a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension" as separate repos "for integrations and other glue code" and uses Transifex for translations.[1]
+There are also minor django-apps that handles things like account confirmation emails and analytical tools as well as templates, static assets, management commands and other peripheral functionalities. We haven't included them in this key structure overview as we're mostly concerned with understanding the main application that holds everything together.
 
 ### Usage assumptions and concepts
 Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features "real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services"[1]. 
