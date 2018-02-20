@@ -12,23 +12,22 @@ Repo with our code: https://github.com/DD2480-group7/zulip
 ![Components](architecture_simple.png)
 
 ### Key codebases
-Zulip https://github.com/zulip/zulip is a real-time web-based chat application mainly implemented in the Django Python web framework. The Django codebase includes the zulip server-side code and the zulip web client, as well as Python API bindings and most of our integrations with other services and applications. 
-Zulip Mobile is the official mobile Zulip client which supports both iOS and Android. Zulip mobile is written in JavaScript with React Native.
-Zulip Desktop is the official Zulip desktop client for macOS, Linux, and Windows.
+Zulip https://github.com/zulip/zulip is a real-time web-based chat application mainly implemented in the Django Python web framework. The Django codebase includes the zulip server-side code and the zulip web client, as well as Python API bindings and most integrations with other services and applications. 
+Zulip Mobile supports both iOS and Android and is written in JavaScript with React Native.
+Zulip Desktop is a desktop client for macOS, Linux, and Windows.
 
-Zulip also maintains several separate repositories for integrations and other glue code: a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension.
-Zulip also uses Transifex to do translations.
+Zulip also maintains: "a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension" as separate repos "for integrations and other glue code" and uses Transifex for translations.
 
 ### Usage assumptions and concepts
-Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services. 
+Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features "real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services". 
 Support is available to users who connect to Zulip using dedicated iOS, Android, Linux, Windows, and macOS clients, as well as people using modern web browsers or dedicated Zulip API clients.
 
-A server can host multiple Zulip realms (organizations) at the same domain, each of which is a private chamber with its own users, streams, customizations, and so on. This means that one person might be a user of multiple Zulip realms. The administrators of a realm can choose whether to allow anyone to register an account and join, or only allow people who have been invited, or restrict registrations to members of particular groups (using email domain names or corporate single-sign-on login for verification). 
+A person can be a user of several Zulip realms (organizations) since one server can host multiple realms. Each realm is private and the administrators of the realm choose wether to allow new users to register and join. Users may require an invitation to be able to join and administrators can restrict members of particular groups from joining, by email domain names or corporate single-sign-on login.
 
 The Zulip “All messages” screen is a chronologically ordered inbox which sums up messages that the user has missed, the most recent messages in all of the users joined streams which aren't muted, as well as private messages, starting at the oldest message.
 A user can narrow to view only the messages in a single stream, and can further narrow to focus on a topic (thread) within that stream. Each narrow has its own URL. The user can quickly see what conversation they’re in – the stream and topic, or the names of the user(s) they’re private messaging with – using the recipient bar displayed atop each conversation.
 
-Zulip’s philosophy is to provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant.
+According to Zulip their philosophy is to: "provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant".
 
 ### Third party services (mentioned in subsystems documentation): 
 
