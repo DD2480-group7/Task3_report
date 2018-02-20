@@ -24,7 +24,7 @@ Support is available to users who connect to Zulip using dedicated iOS, Android,
 
 A person can be a user of several Zulip realms (organizations) since one server can host multiple realms. Each realm is private and the administrators of the realm choose wether to allow new users to register and join. Users may require an invitation to be able to join and administrators can restrict members of particular groups from joining, by email domain names or corporate single-sign-on login.
 
-The Zulip “All messages” screen is a chronologically ordered inbox which sums up messages that the user has missed, the most recent messages in all of the users joined streams which aren't muted, as well as private messages, starting at the oldest message.
+The Zulip “All messages” screen could be seen as an "inbox" which sums up messages that the user has missed, the most recent messages in all of the users joined streams which aren't muted, as well as private messages, starting at the oldest message.
 A user can narrow to view only the messages in a single stream, and can further narrow to focus on a topic (thread) within that stream. Each narrow has its own URL. The user can quickly see what conversation they’re in – the stream and topic, or the names of the user(s) they’re private messaging with – using the recipient bar displayed atop each conversation.
 
 According to Zulip their philosophy is to: "provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant".
