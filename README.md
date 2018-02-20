@@ -126,9 +126,12 @@ An asterix (*) after the method name implies that the specific method is called 
 ![Components](zulip_diagram.png)
 
 ## Test logs
-Overall results with link to a copy of the logs (before/after
-refactoring).
-The refactoring itself is documented by the git log.
+Tests were executed and examined both before and after refactoring. To be completely thorough, we have both included the complete set of unit tests and those which are relevant to our changes. 
+
+1.	[Complete test before refactoring](pre_test_output_all)
+2.	[Relevant tests before refactoring](pre_test_output_relevant)
+3.	[Complete test after refactoring](post_test_output_all)
+4.	[Relevant tests after refactoring](post_test_output_relevant)
 
 ### Req5:
 *Changes to the test suite are shown and documented, e.g. as a patch*
