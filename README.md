@@ -259,4 +259,4 @@ The limiting factor to our experience and the work we’ve done is naturally tha
 Finally, the experience gained is that we are all more prepared to contribute to open-source projects with a familiarity to the process. We have also gained experience from interacting with the community of the project and working as a team to complete the assignment.
 
 ## Sources
-Zulip. 2018. Zulip architectural overview. Zulip. http://zulip.readthedocs.io/en/latest/overview/architecture-overview.html (February 20, 2018)
+[1] Zulip. 2018. Zulip architectural overview. Zulip. http://zulip.readthedocs.io/en/latest/overview/architecture-overview.html (February 20, 2018)
