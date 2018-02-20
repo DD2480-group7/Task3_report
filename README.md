@@ -146,10 +146,7 @@ Is there something special you want to mention here?
 
 The main take-aways for this project are an insight into the complexity of refactoring in a real-world open-source project.
 Even if the given documentation/examples of the project were quite extensive, some members still experienced issues with the onboarding experience.
+
 The community of the project seems to be fairly active, with contributers posting not only on the github issues but also daily in zulip channels like "#provision help". Our team even got the opportunity to post about our onboarding issues in this channel and potentially help future contributors. It was also interesting to see how the project was almost like a company with guides for almost everything imagineable and, for example, a code of conduct. Whatever you could think of, be it mocking tests, importing libraries or writing commit messages, there was a guide for it.
 
-### Req8:
-*The overall work carried out, and experience gained, are documented. In particular, mention your experience about
-the given documentation/examples of the project,
-its tool framework,
-and the interaction within your team and with the community of the project.*
+Finally, the experience gained is that we are all more prepared to contribute to open-source projects with a familiarity to the process. We have also gained experience from interacting with the community of the project and working as a team to complete the assignment.
