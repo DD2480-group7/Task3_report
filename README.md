@@ -9,7 +9,7 @@ Repo with our code: https://github.com/DD2480-group7/zulip
 
 
 ## Architectural overview
-![Components](https://github.com/DD2480-group7/Task3_report/blob/Plongy-patch-1/achitectural_overview.jpeg?raw=true)
+![Components](achitectural_overview.jpeg)
 
 ### Key codebases
 Zulip (https://github.com/zulip/zulip) is a web-based chat application. Zulip is based on the Django Python web framework and, thus, includes server-side code, web client and Python API bindings. There is also a version called Zulip Mobile, which supports both IOS and Android. This is written in Javascript and React Naive. Zulip Desktop works on macOS, Linux and Windows.[1]
