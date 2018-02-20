@@ -257,3 +257,6 @@ Aside from the essential practical skills that this project has given us an oppo
 The limiting factor to our experience and the work we’ve done is naturally that we only did a refactoring. Work of this kind is beneficiary to the project as it reduces the technical debt, and can at times uncover other issues regarding code health. This issue did not really uncover that, however a sort of sub-issue did arise which was the the lines of code we were refactoring lacked complete test coverage. This enabled us to (in addition to the refactoring) to add additional tests which helped increased the code coverage. As such our work went outside the initial ramifications and provided with an additional (perhaps lasting) contribution to the project. 
 
 Finally, the experience gained is that we are all more prepared to contribute to open-source projects with a familiarity to the process. We have also gained experience from interacting with the community of the project and working as a team to complete the assignment.
+
+## Sources
+Zulip. 2018. Zulip architectural overview. Zulip. http://zulip.readthedocs.io/en/latest/overview/architecture-overview.html (February 20, 2018)
