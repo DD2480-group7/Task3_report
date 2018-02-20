@@ -12,11 +12,9 @@ Repo with our code: https://github.com/DD2480-group7/zulip
 ![Components](architecture_simple.png)
 
 ### Key codebases
-Zulip https://github.com/zulip/zulip is a real-time web-based chat application mainly implemented in the Django Python web framework. The Django codebase includes the zulip server-side code and the zulip web client, as well as Python API bindings and most integrations with other services and applications. 
-Zulip Mobile supports both iOS and Android and is written in JavaScript with React Native.
-Zulip Desktop is a desktop client for macOS, Linux, and Windows.
+Zulip (https://github.com/zulip/zulip) is a web-based chat application. Zulip is based on the Django Python web framework and, thus, includes server-side code, web client and Python API bindings. There is also a version called Zulip Mobile, which supports both IOS and Android. This is written in Javascript and React Naive. Zulip Desktop works on macOS, Linux and Windows.[1]
 
-Zulip also maintains: "a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension" as separate repos "for integrations and other glue code" and uses Transifex for translations.
+Zulip also maintains: "a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension" as separate repos "for integrations and other glue code" and uses Transifex for translations.[1]
 
 ### Usage assumptions and concepts
 Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features "real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services". 
