@@ -83,6 +83,7 @@ Optionally outputs the gateway message or an Exception.
 **Functional Requirement 1.1.1- Throwing ZulipEmailUnrecognizedAddressError upon error/failure** 
 
 The extraction of the gateway message shall throw an Exception, ZulipEmailUnrecognizedAddressError, when there’s no matching address found in the gateway message.
+
 **Degree of necessity**
 
 Optional
