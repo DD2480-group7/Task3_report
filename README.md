@@ -137,12 +137,9 @@ An asterix (*) after the method name implies that the specific method is called 
 ![Components](zulip_diagram.png)
 
 ## Test logs
-Tests were executed and examined both before and after refactoring. To be completely thorough, we have both included the complete set of unit tests and those which are relevant to our changes. 
-
-1.	[Complete test before refactoring](pre_test_output_all)
-2.	[Relevant tests before refactoring](pre_test_output_relevant)
-3.	[Complete test after refactoring](post_test_output_all)
-4.	[Relevant tests after refactoring](post_test_output_relevant)
+Overall results with link to a copy of the logs (before/after
+refactoring).
+The refactoring itself is documented by the git log.
 
 ### Req5:
 *Changes to the test suite are shown and documented, e.g. as a patch*
@@ -190,14 +187,14 @@ Tests were executed and examined both before and after refactoring. To be comple
 8.  running code ≈ 3
 
 *Lukas Szerszen*
-1.  plenary discussions/meetings;
-2.  discussions within parts of the group;
-3.  reading documentation;
-4.  configuration;
-5.  analyzing code/output;
-6.  writing documentation;
-7.  writing code;
-8.  running code?
+1.  plenary discussions/meetings; 2
+2.  discussions within parts of the group; 4
+3.  reading documentation; 6
+4.  configuration; 3 (2hrs of bug fixing)
+5.  analyzing code/output; 5
+6.  writing documentation; 5
+7.  writing code;6
+8.  running code; 1
 
 ## Overall experience
 What are your main take-aways from this project? What did you learn?
