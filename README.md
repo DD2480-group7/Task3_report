@@ -148,8 +148,6 @@ has test coverage which is fractionated among many tests (some not in the same m
 **Requirement 1.1.1**
 Has 8(?) newly added test cases which do the following;
 
-
-
 ## The refactoring carried out
 The following is a simplified UML-diagram over the classes and methods before and after they were affected by our refactoring. 
 
@@ -160,6 +158,8 @@ An asterix (*) after the method name implies that the specific method is called 
 
 ![Components](zulip_diagram.png)
 
+We also looked at the later part of the issue related to catching exceptions and doing "useful" logging and error reporting. We carefully studied the code and deemed this part of the issue to be insufficiently defined. There were also further confusion since the code contained TODO-comments which we had questions about. To continue with this we would contact the zulip team further to ensured we fullfilled their vision.
+
 ## Test logs
 Overall results with link to a copy of the logs (before/after
 refactoring).
@@ -169,7 +169,6 @@ The refactoring itself is documented by the git log.
 *Changes to the test suite are shown and documented, e.g. as a patch*
 
 ## Effort spent
-
 *Alexander Manske*
 1.  plenary discussions/meetings ≈ 2
 2.  discussions within parts of the group ≈ 3
@@ -221,15 +220,8 @@ The refactoring itself is documented by the git log.
 8.  running code; 1
 
 ## Overall experience
-What are your main take-aways from this project? What did you learn?
-Is there something special you want to mention here?
-
 The main take-aways for this project are an insight into the complexity of refactoring in a real-world open-source project.
 Even if the given documentation/examples of the project were quite extensive, some members still experienced issues with the onboarding experience.
 The community of the project seems to be fairly active, with contributers posting not only on the github issues but also daily in zulip channels like "#provision help". Our team even got the opportunity to post about our onboarding issues in this channel and potentially help future contributors. It was also interesting to see how the project was almost like a company with guides for almost everything imagineable and, for example, a code of conduct. Whatever you could think of, be it mocking tests, importing libraries or writing commit messages, there was a guide for it.
 
-### Req8:
-*The overall work carried out, and experience gained, are documented. In particular, mention your experience about
-the given documentation/examples of the project,
-its tool framework,
-and the interaction within your team and with the community of the project.*
+Finally, the experience gained is that we are all more prepared to contribute to open-source projects with a familiarity to the process. We have also gained experience from interacting with the community of the project and working as a team to complete the assignment.
