@@ -89,7 +89,6 @@ The refactoring itself is documented by the git log.
 *Changes to the test suite are shown and documented, e.g. as a patch*
 
 ## Effort spent
-
 *Alexander Manske*
 1.  plenary discussions/meetings ≈ 2
 2.  discussions within parts of the group ≈ 3
@@ -141,9 +140,6 @@ The refactoring itself is documented by the git log.
 8.  running code?
 
 ## Overall experience
-What are your main take-aways from this project? What did you learn?
-Is there something special you want to mention here?
-
 The main take-aways for this project are an insight into the complexity of refactoring in a real-world open-source project.
 Even if the given documentation/examples of the project were quite extensive, some members still experienced issues with the onboarding experience.
 
