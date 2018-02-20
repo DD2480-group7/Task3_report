@@ -1,5 +1,7 @@
 # Report for assignment 3
 
+Repo with our code: https://github.com/DD2480-group7/zulip
+
 ## Project
 * Name: Zulip
 * URL: https://github.com/zulip/zulip
