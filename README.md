@@ -18,7 +18,7 @@ Zulip also maintains: "a Hubot adapter; integrations with Phabricator, Jenkins, 
 
 ### Usage assumptions and concepts
 Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features "real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services"[1]. 
-Support is available to users who connect to Zulip using dedicated iOS, Android, Linux, Windows, and macOS clients, as well as people using modern web browsers or dedicated Zulip API clients.
+Support is available to: "users who connect to Zulip using dedicated iOS, Android, Linux, Windows, and macOS clients, as well as people using modern web browsers or dedicated Zulip API clients"[1].
 
 A person can be a user of several Zulip realms (organizations) since one server can host multiple realms. Each realm is private and the administrators of the realm choose wether to allow new users to register and join. Users may require an invitation to be able to join and administrators can restrict members of particular groups from joining, by email domain names or corporate single-sign-on login.
 
