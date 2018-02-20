@@ -8,6 +8,51 @@
 
 ## Architectural overview
 ![Components](architecture_simple.png)
+
+### Key codebases
+Zulip https://github.com/zulip/zulip is a real-time web-based chat application mainly implemented in the Django Python web framework. The Django codebase includes the zulip server-side code and the zulip web client, as well as Python API bindings and most of our integrations with other services and applications. 
+Zulip Mobile is the official mobile Zulip client which supports both iOS and Android. Zulip mobile is written in JavaScript with React Native.
+Zulip Desktop is the official Zulip desktop client for macOS, Linux, and Windows.
+
+Zulip also maintains several separate repositories for integrations and other glue code: a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension.
+Zulip also uses Transifex to do translations.
+
+### Usage assumptions and concepts
+Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services. 
+Support is available to users who connect to Zulip using dedicated iOS, Android, Linux, Windows, and macOS clients, as well as people using modern web browsers or dedicated Zulip API clients.
+
+A server can host multiple Zulip realms (organizations) at the same domain, each of which is a private chamber with its own users, streams, customizations, and so on. This means that one person might be a user of multiple Zulip realms. The administrators of a realm can choose whether to allow anyone to register an account and join, or only allow people who have been invited, or restrict registrations to members of particular groups (using email domain names or corporate single-sign-on login for verification). 
+
+The Zulip “All messages” screen is a chronologically ordered inbox which sums up messages that the user has missed, the most recent messages in all of the users joined streams which aren't muted, as well as private messages, starting at the oldest message.
+A user can narrow to view only the messages in a single stream, and can further narrow to focus on a topic (thread) within that stream. Each narrow has its own URL. The user can quickly see what conversation they’re in – the stream and topic, or the names of the user(s) they’re private messaging with – using the recipient bar displayed atop each conversation.
+
+Zulip’s philosophy is to provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant.
+
+### Third party services (mentioned in subsystems documentation): 
+
+A lot of third party applications are implemented in zulip to make everything run smoothly and increase functionality. These third party programs and services are also technically a part of the whole application architecture, but we have chosen to focus less on them:
+
+* PostgreSQL
+  * Database used for persistent data, aka. data that has a longer life time than the current session. 
+* Redis
+  * Used for short-term data storage. 
+* Nginx
+  * Front end web-server, provides Django and Tornado with assets to handle. 
+* RabbitMQ
+  * A queuing system which keeps track of requests that cannot be handled immidiately by the main thread due to congestion. 
+* Django & Tornado
+  * Django is a Python web framework which is zulip's main web application server. 
+  * Tornado runs a server to client real time push system. It has the capacity of holiding open tens of thousands long-term connections. Responsible for message delivery. 
+* HTML templates
+  * Backend templates: Jinja 2
+  * Frontend templates: Handlebars
+* Supervisor
+  * Starts and restarts server processes automatically if they crash. Also logs server data automatically. 
+* Memcached
+  * Used to cache database model objects instead of fetching data from the database itself for each request. Entries are invalidated if they have changed value in the original database. 
+* Nagios
+  * Used to send notifications to the system admin, for example in case of outages or downtime. Usually used as plugins run on a specific server. 
+  
 ## Selected issue(s)
 * Title: Clean up email_mirror code
 * URL: https://github.com/zulip/zulip/issues/1836
@@ -30,27 +75,6 @@ For communications Zulip uses their own platform where they have a community ser
 
 All in all this gives a very good base for great onboarding. It also sets a high standard for us as coders to follow the specified coding style and principles.
 
-### Third party services (mentioned in subsystems documentation): 
-* PostgreSQL
-  * Database for persistent data
-* Redis
-  * Used for short-term data stores
-* Nginx
-  * Front end web-server 
-* RabbitMQ
-  * Queuing system.
-* Django & Tornado
-  * Django: main web application server
-  * Tornado: runs server to client real time push system
-* HTML templates
-  * Jinja 2: backend templates
-  * Handlebars: frontend templates
-* Supervisor
-  * Starts and restarts server processes automatically if they crash.
-* Memcached
-  * Used to cache database model objects
-* Nagios
-  * Used for notifications to the system
 
 ## **Functional Requirements**
 The functional requirements are listed in compliance with the standard IEEE-830. The functional requirements related to the refactoring are those pertaining to the Email Gateway Integration. The requirements are structured at various degrees of granularity, descending into sub-sub requirements. The functionality targeted by the refactoring is requirement 1.1.1, while those prior serve to give an idea of the main functionality provided (and thus affected).
@@ -139,12 +163,14 @@ Test that decode is encode in reverse when the Address is made up of non alphanu
 
 
 ## The carried out refactoring
+
 The following is a simplified UML-diagram over the classes and methods before and after they were affected by our refactoring. 
 
 Since the affected classes are very large, fields and other unnessecary data has been omitted to give a clearer overview over what's been changed and how it affects each method. 
 
 An asterix (*) after the method name implies that the specific method is called from a test case. 
 
+We also looked at the later part of the issue related to catching exceptions and doing "useful" logging and error reporting. We carefully studied the code and deemed this part of the issue to be insufficiently defined. There were also further confusion since the code contained TODO-comments which we had questions about. To continue with this we would contact the zulip team further to ensured we fullfilled their vision.
 
 ![Components](zulip_diagram.png)
 
@@ -157,15 +183,14 @@ In terms of refactoring patterns our refactoring used a technique for improving 
 
 
 ## Test logs
-Overall results with link to a copy of the logs (before/after
-refactoring).
-The refactoring itself is documented by the git log.
+Tests were executed and examined both before and after refactoring. To be completely thorough, we have both included the complete set of unit tests and those which are relevant to our changes. 
 
-### Req5:
-*Changes to the test suite are shown and documented, e.g. as a patch*
+1.	[Complete test before refactoring](pre_test_output_all)
+2.	[Relevant tests before refactoring](pre_test_output_relevant)
+3.	[Complete test after refactoring](post_test_output_all)
+4.	[Relevant tests after refactoring](post_test_output_relevant)
 
 ## Effort spent
-
 *Alexander Manske*
 1.  plenary discussions/meetings ≈ 2
 2.  discussions within parts of the group ≈ 3
@@ -177,14 +202,14 @@ The refactoring itself is documented by the git log.
 8.  running code ≈ 6
 
 *Alexander Viklund*
-1.  plenary discussions/meetings;
-2.  discussions within parts of the group;
-3.  reading documentation;
-4.  configuration;
-5.  analyzing code/output;
-6.  writing documentation;
-7.  writing code;
-8.  running code?
+1.  plenary discussions/meetings incl. finding projects ≈ 2
+2.  discussions within parts of the group  ≈ 2
+3.  onboarding ≈ 4
+4.  Setting up environment ≈ 5
+5.  resolving dependency problems ≈ 4
+6.  writing report  ≈ 4
+7.  writing code ≈ 10
+8.  running code ≈ 3
 
 *Alfrida Mattisson*
 1.  plenary discussions/meetings ≈ 2
@@ -217,9 +242,6 @@ The refactoring itself is documented by the git log.
 8.  running code  ≈  1
 
 ## Overall experience
-What are your main take-aways from this project? What did you learn?
-Is there something special you want to mention here?
-
 The main take-aways for this project are an insight into the complexity of refactoring in a real-world open-source project.
 Even if the given documentation/examples of the project were quite extensive, some members still experienced issues with the onboarding experience.
 The community of the project seems to be fairly active, with contributers posting not only on the github issues but also daily in zulip channels like "#provision help". Our team even got the opportunity to post about our onboarding issues in this channel and potentially help future contributors. It was also interesting to see how the project was almost like a company with guides for almost everything imagineable and, for example, a code of conduct. Whatever you could think of, be it mocking tests, importing libraries or writing commit messages, there was a guide for it.
@@ -233,3 +255,4 @@ Aside from the essential practical skills that this project has given us an oppo
 
 The limiting factor to our experience and the work we’ve done is naturally that we only did a refactoring. Work of this kind is beneficiary to the project as it reduces the technical debt, and can at times uncover other issues regarding code health. This issue did not really uncover that, however a sort of sub-issue did arise which was the the lines of code we were refactoring lacked complete test coverage. This enabled us to (in addition to the refactoring) to add additional tests which helped increased the code coverage. As such our work went outside the initial ramifications and provided with an additional (perhaps lasting) contribution to the project. 
 
+Finally, the experience gained is that we are all more prepared to contribute to open-source projects with a familiarity to the process. We have also gained experience from interacting with the community of the project and working as a team to complete the assignment.
