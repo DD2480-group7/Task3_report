@@ -51,8 +51,51 @@ All in all this gives a very good base for great onboarding. It also sets a high
   * Used to cache database model objects
 * Nagios
   * Used for notifications to the system
+
+## **Functional Requirements**
+The functional requirements are listed in compliance with the standard IEEE-830. The functional requirements related to the refactoring are those pertaining to the Email Gateway Integration. The requirements are structured at various degrees of granularity, descending into sub-sub requirements. The functionality targeted by the refactoring is requirement 1.1.1, while those prior serve to give an idea of the main functionality provided (and thus affected).
   
+## **Related Functional requirements**
+**Functional Requirement 1 - Email Gateway Integration**
+
+**Description**
+The System, Zulip, shall provide functionality for Email Gateway Integration. The Email gateway integration supports sending messages into Zulip by sending an email.  This is useful for receiving notifications from third-party services that only send outgoing notifications via email. Each stream has an email address documented on the stream settings page and emails sent to that address will be delivered into the stream.
+**Degree of necessity**
+Conditional
+
+**Functional Requirement 1.1 -  Extract gateway message from address**
+The system shall provide functionality for extracting gateway message from the email address used by the user to send a message to a Zulip chat stream. The gateway message is extracted from the address used in the input in the manner specified by the configurable setting EMAIL_GATEWAY_PATTERN.
+
+**Degree of necessity**
+Conditional
+
+**Input**
+Address:Text
+The input consist of 1 argument which is the Address of the sender, in the format;   username+%s@example.com (as specified by EMAIL_GATEWAY_PATTERN).
+
+**Output**
+Optional[Text]
+
+Optionally outputs the gateway message or an Exception.
+
 ## Requirements affected by functionality being refactored
+**Functional Requirement 1.1.1- Throwing ZulipEmailUnrecognizedAddressError upon error/failure** 
+
+The extraction of the gateway message shall throw an Exception, ZulipEmailUnrecognizedAddressError, when there’s no matching address found in the gateway message.
+**Degree of necessity**
+
+Optional
+
+**Input**
+
+Address:Text
+The input consist of 1 argument which is the Address of the sender, in the format;   username+%s@example.com (as specified by EMAIL_GATEWAY_PATTERN).
+
+**Output**
+
+Exception, when no matching address in the extracted gateway message.
+
+
 #### 1 - Location of methods get_email_gateway_message_string_from_address, encode_email_address_helper, decode_email_address
 These three methods should be moved from zerver/lib/actions.py to zerver/lib/email_mirror.py.
 
@@ -89,6 +132,7 @@ The refactoring itself is documented by the git log.
 *Changes to the test suite are shown and documented, e.g. as a patch*
 
 ## Effort spent
+
 *Alexander Manske*
 1.  plenary discussions/meetings ≈ 2
 2.  discussions within parts of the group ≈ 3
@@ -140,9 +184,15 @@ The refactoring itself is documented by the git log.
 8.  running code?
 
 ## Overall experience
+What are your main take-aways from this project? What did you learn?
+Is there something special you want to mention here?
+
 The main take-aways for this project are an insight into the complexity of refactoring in a real-world open-source project.
 Even if the given documentation/examples of the project were quite extensive, some members still experienced issues with the onboarding experience.
-
 The community of the project seems to be fairly active, with contributers posting not only on the github issues but also daily in zulip channels like "#provision help". Our team even got the opportunity to post about our onboarding issues in this channel and potentially help future contributors. It was also interesting to see how the project was almost like a company with guides for almost everything imagineable and, for example, a code of conduct. Whatever you could think of, be it mocking tests, importing libraries or writing commit messages, there was a guide for it.
 
-Finally, the experience gained is that we are all more prepared to contribute to open-source projects with a familiarity to the process. We have also gained experience from interacting with the community of the project and working as a team to complete the assignment.
+### Req8:
+*The overall work carried out, and experience gained, are documented. In particular, mention your experience about
+the given documentation/examples of the project,
+its tool framework,
+and the interaction within your team and with the community of the project.*
