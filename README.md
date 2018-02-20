@@ -8,10 +8,6 @@
 
 ## Architectural overview
 ![Components](architecture_simple.png)
-## Selected issue(s)
-* Title: Clean up email_mirror code
-* URL: https://github.com/zulip/zulip/issues/1836
-* The issue entailed moving a couple of methods and changing so that when an error occured the method cast an exceptions instead of returning `None`. The changes, thus, also required modifications in calling methods in order to catch the error that was cast.
 
 ### Key codebases
 Zulip https://github.com/zulip/zulip is a real-time web-based chat application mainly implemented in the Django Python web framework. The Django codebase includes the zulip server-side code and the zulip web client, as well as Python API bindings and most of our integrations with other services and applications. 
@@ -56,6 +52,11 @@ A lot of third party applications are implemented in zulip to make everything ru
   * Used to cache database model objects instead of fetching data from the database itself for each request. Entries are invalidated if they have changed value in the original database. 
 * Nagios
   * Used to send notifications to the system admin, for example in case of outages or downtime. Usually used as plugins run on a specific server. 
+  
+## Selected issue(s)
+* Title: Clean up email_mirror code
+* URL: https://github.com/zulip/zulip/issues/1836
+* The issue entailed moving a couple of methods and changing so that when an error occured the method cast an exceptions instead of returning `None`. The changes, thus, also required modifications in calling methods in order to catch the error that was cast.
 
 ## Onboarding experience
 Zulip is a very well documented project with a great community with helpful people.
