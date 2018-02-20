@@ -13,22 +13,24 @@
 * URL: https://github.com/zulip/zulip/issues/1836
 * The issue entailed moving a couple of methods and changing so that when an error occured the method cast an exceptions instead of returning `None`. The changes, thus, also required modifications in calling methods in order to catch the error that was cast.
 
-## Onboarding experience
-Zulip is a very well documented project with a great community with helpful people.
+### Key codebases
+Zulip https://github.com/zulip/zulip is a real-time web-based chat application mainly implemented in the Django Python web framework. The Django codebase includes the zulip server-side code and the zulip web client, as well as Python API bindings and most of our integrations with other services and applications. 
+Zulip Mobile is the official mobile Zulip client which supports both iOS and Android. Zulip mobile is written in JavaScript with React Native.
+Zulip Desktop is the official Zulip desktop client for macOS, Linux, and Windows.
 
-To help with onboarding they have a ["Contributing to Zulip, getting started"-guide](https://zulip.readthedocs.io/en/latest/overview/contributing.html). The documentation contains everything from how to set up a development environment to how to run tests, what tests correspond to what parts of the code, code standards and extensive documentation for the different parts of the code. The prerequisite tools for the project were Git, Git for Windows (for windows users) Vagrant, Virtualbox, vagrant-lxc plugin (for linux users). The tools were well documented in the getting started-guide. Unfortunately there were errors depending on what operating system the contributor was using that the documentation had no answers to. When running “vagrant up” Vagrant downloaded the base Ubuntu 14.04 virtual machine image (for macOS and Windows) or container (for Ubuntu), configured this virtual machine/container for use with Zulip, created a shared directory mapping the clone of the Zulip code inside the virtual machine/container at ~/zulip and ran the tools/provision script inside the virtual machine/container, which downloads all required dependencies, sets up the python environment for the Zulip development server, and initializes a default test database. A [log](provision.log) from provisioning is included in this repository.
+Zulip also maintains several separate repositories for integrations and other glue code: a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension.
+Zulip also uses Transifex to do translations.
 
-The onboarding experience as a windows user for the zulip-project was complicated and time-demanding since the current setup for windows is flawed and the documentation offered no support for the issue.
-Two team members using windows had the issue of the Vagrantfile on line 35 checking the version of lxc-ls. Our guess is that the Vagrantfile isn’t supposed to be run for windows users.
-To find the solution the “Troubleshooting and Common Errors” and “#provision help”-channel in zulip was studied, Git-BASH and Python was re-installed, the repo was re-cloned and windows permission-errors was examined.
-Docker was also used to try to replace Vagrant but Docker required Windows Pro while the user had Windows Home.
-The issue was finally resolved by one user commenting out line 35 and hard-coding the variable LXC_VERSION to 2.1.0. We have no confirmation of whether the zulip-team accepts this solution. 
+### Usage assumptions and concepts
+Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services. 
+Support is available to users who connect to Zulip using dedicated iOS, Android, Linux, Windows, and macOS clients, as well as people using modern web browsers or dedicated Zulip API clients.
 
-For Mac users the experience of downloading and setting up the above mentioned tools was easy, and one could follow the guide step by step.  
+A server can host multiple Zulip realms (organizations) at the same domain, each of which is a private chamber with its own users, streams, customizations, and so on. This means that one person might be a user of multiple Zulip realms. The administrators of a realm can choose whether to allow anyone to register an account and join, or only allow people who have been invited, or restrict registrations to members of particular groups (using email domain names or corporate single-sign-on login for verification). 
 
-For communications Zulip uses their own platform where they have a community server set up and where there always is someone that's able to help if you're stuck or having problems. We have used this a bit in order to get clarifications.
+The Zulip “All messages” screen is a chronologically ordered inbox which sums up messages that the user has missed, the most recent messages in all of the users joined streams which aren't muted, as well as private messages, starting at the oldest message.
+A user can narrow to view only the messages in a single stream, and can further narrow to focus on a topic (thread) within that stream. Each narrow has its own URL. The user can quickly see what conversation they’re in – the stream and topic, or the names of the user(s) they’re private messaging with – using the recipient bar displayed atop each conversation.
 
-All in all this gives a very good base for great onboarding. It also sets a high standard for us as coders to follow the specified coding style and principles.
+Zulip’s philosophy is to provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant.
 
 ### Third party services (mentioned in subsystems documentation): 
 
@@ -54,6 +56,24 @@ A lot of third party applications are implemented in zulip to make everything ru
   * Used to cache database model objects instead of fetching data from the database itself for each request. Entries are invalidated if they have changed value in the original database. 
 * Nagios
   * Used to send notifications to the system admin, for example in case of outages or downtime. Usually used as plugins run on a specific server. 
+
+## Onboarding experience
+Zulip is a very well documented project with a great community with helpful people.
+
+To help with onboarding they have a ["Contributing to Zulip, getting started"-guide](https://zulip.readthedocs.io/en/latest/overview/contributing.html). The documentation contains everything from how to set up a development environment to how to run tests, what tests correspond to what parts of the code, code standards and extensive documentation for the different parts of the code. The prerequisite tools for the project were Git, Git for Windows (for windows users) Vagrant, Virtualbox, vagrant-lxc plugin (for linux users). The tools were well documented in the getting started-guide. Unfortunately there were errors depending on what operating system the contributor was using that the documentation had no answers to. When running “vagrant up” Vagrant downloaded the base Ubuntu 14.04 virtual machine image (for macOS and Windows) or container (for Ubuntu), configured this virtual machine/container for use with Zulip, created a shared directory mapping the clone of the Zulip code inside the virtual machine/container at ~/zulip and ran the tools/provision script inside the virtual machine/container, which downloads all required dependencies, sets up the python environment for the Zulip development server, and initializes a default test database. A [log](provision.log) from provisioning is included in this repository.
+
+The onboarding experience as a windows user for the zulip-project was complicated and time-demanding since the current setup for windows is flawed and the documentation offered no support for the issue.
+Two team members using windows had the issue of the Vagrantfile on line 35 checking the version of lxc-ls. Our guess is that the Vagrantfile isn’t supposed to be run for windows users.
+To find the solution the “Troubleshooting and Common Errors” and “#provision help”-channel in zulip was studied, Git-BASH and Python was re-installed, the repo was re-cloned and windows permission-errors was examined.
+Docker was also used to try to replace Vagrant but Docker required Windows Pro while the user had Windows Home.
+The issue was finally resolved by one user commenting out line 35 and hard-coding the variable LXC_VERSION to 2.1.0. We have no confirmation of whether the zulip-team accepts this solution. 
+
+For Mac users the experience of downloading and setting up the above mentioned tools was easy, and one could follow the guide step by step.  
+
+For communications Zulip uses their own platform where they have a community server set up and where there always is someone that's able to help if you're stuck or having problems. We have used this a bit in order to get clarifications.
+
+All in all this gives a very good base for great onboarding. It also sets a high standard for us as coders to follow the specified coding style and principles.
+
 
 ## **Functional Requirements**
 The functional requirements are listed in compliance with the standard IEEE-830. The functional requirements related to the refactoring are those pertaining to the Email Gateway Integration. The requirements are structured at various degrees of granularity, descending into sub-sub requirements. The functionality targeted by the refactoring is requirement 1.1.1, while those prior serve to give an idea of the main functionality provided (and thus affected).
