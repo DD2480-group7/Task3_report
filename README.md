@@ -17,7 +17,7 @@ Zulip (https://github.com/zulip/zulip) is a web-based chat application. Zulip is
 Zulip also maintains: "a Hubot adapter; integrations with Phabricator, Jenkins, Puppet, Redmine, and Trello; node.js API bindings; and zulip’s full-text search PostgreSQL extension" as separate repos "for integrations and other glue code" and uses Transifex for translations.[1]
 
 ### Usage assumptions and concepts
-Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features "real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services". 
+Zulip is meant for groups from small teams to several hundred users. It is therefore catered to companies. It features "real-time notifications, message persistence and search, public group conversations (streams), invite-only streams, private one-on-one and group conversations, inline image previews, team presence/buddy lists, a rich API, Markdown message support, and numerous integrations with other services"[1]. 
 Support is available to users who connect to Zulip using dedicated iOS, Android, Linux, Windows, and macOS clients, as well as people using modern web browsers or dedicated Zulip API clients.
 
 A person can be a user of several Zulip realms (organizations) since one server can host multiple realms. Each realm is private and the administrators of the realm choose wether to allow new users to register and join. Users may require an invitation to be able to join and administrators can restrict members of particular groups from joining, by email domain names or corporate single-sign-on login.
@@ -25,7 +25,7 @@ A person can be a user of several Zulip realms (organizations) since one server 
 The Zulip “All messages” screen could be seen as an "inbox" which sums up messages that the user has missed, the most recent messages in all of the users joined streams which aren't muted, as well as private messages, starting at the oldest message.
 A user can narrow to view only the messages in a single stream, and can further narrow to focus on a topic (thread) within that stream. Each narrow has its own URL. The user can quickly see what conversation they’re in – the stream and topic, or the names of the user(s) they’re private messaging with – using the recipient bar displayed atop each conversation.
 
-According to Zulip their philosophy is to: "provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant".
+According to Zulip their philosophy is to: "provide sensible defaults but give the user fine-grained control over their incoming information flow; a user can mute topics and streams, and can make fine-grained choices to reduce real-time notifications they find irrelevant"[1].
 
 ### Third party services (mentioned in subsystems documentation): 
 
