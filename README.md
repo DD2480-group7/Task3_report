@@ -31,26 +31,29 @@ For communications Zulip uses their own platform where they have a community ser
 All in all this gives a very good base for great onboarding. It also sets a high standard for us as coders to follow the specified coding style and principles.
 
 ### Third party services (mentioned in subsystems documentation): 
+
+A lot of third party applications are implemented in zulip to make everything run smoothly and increase functionality. These third party programs and services are also technically a part of the whole application architecture, but we have chosen to focus less on them:
+
 * PostgreSQL
-  * Database for persistent data
+  * Database used for persistent data, aka. data that has a longer life time than the current session. 
 * Redis
-  * Used for short-term data stores
+  * Used for short-term data storage. 
 * Nginx
-  * Front end web-server 
+  * Front end web-server, provides Django and Tornado with assets to handle. 
 * RabbitMQ
-  * Queuing system.
+  * A queuing system which keeps track of requests that cannot be handled immidiately by the main thread due to congestion. 
 * Django & Tornado
-  * Django: main web application server
-  * Tornado: runs server to client real time push system
+  * Django is a Python web framework which is zulip's main web application server. 
+  * Tornado runs a server to client real time push system. It has the capacity of holiding open tens of thousands long-term connections. Responsible for message delivery. 
 * HTML templates
-  * Jinja 2: backend templates
-  * Handlebars: frontend templates
+  * Backend templates: Jinja 2
+  * Frontend templates: Handlebars
 * Supervisor
-  * Starts and restarts server processes automatically if they crash.
+  * Starts and restarts server processes automatically if they crash. Also logs server data automatically. 
 * Memcached
-  * Used to cache database model objects
+  * Used to cache database model objects instead of fetching data from the database itself for each request. Entries are invalidated if they have changed value in the original database. 
 * Nagios
-  * Used for notifications to the system
+  * Used to send notifications to the system admin, for example in case of outages or downtime. Usually used as plugins run on a specific server. 
 
 ## **Functional Requirements**
 The functional requirements are listed in compliance with the standard IEEE-830. The functional requirements related to the refactoring are those pertaining to the Email Gateway Integration. The requirements are structured at various degrees of granularity, descending into sub-sub requirements. The functionality targeted by the refactoring is requirement 1.1.1, while those prior serve to give an idea of the main functionality provided (and thus affected).
