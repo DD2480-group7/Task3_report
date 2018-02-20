@@ -98,7 +98,7 @@ Conditional
 
 **Input**
 Address:Text
-The input consist of 1 argument which is the Address of the sender, in the format;   username+%s@example.com (as specified by EMAIL_GATEWAY_PATTERN).
+The input consist of 1 argument which is the Address of the sender, in the format;   `<stream_name>+<token>@example.com` (as specified by EMAIL_GATEWAY_PATTERN).
 
 **Output**
 Optional[Text]
